@@ -11,13 +11,16 @@
 &nbsp;
 
 ## **ERD Diagram:**
-- one      ---< Many
-- Calendar ---< Meals
-- Calendar ---< Grocery List
-- User     ---< Calendars
 
-## **Trello Board: https://trello.com/b/xctPWADV/meal-prepper-project-board **
+<img src="images/ERD.jpg" alt="drawing" width="500"/>
 &nbsp;
+
+ 
+
+## **Trello Board:**
+
+**https://trello.com/b/xctPWADV/meal-prepper-project-board** 
+
 
 ## **Technologies Used:**
 - HTML

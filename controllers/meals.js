@@ -6,6 +6,7 @@ module.exports = {
   show,
   new: newMeal,
   create,
+  delete: deleteMeal
 };
 
 function index(req, res) {
@@ -23,6 +24,20 @@ function show(req, res) {
 
 function newMeal(req, res) {
   res.render("meals/new", { title: "Add Day and Meal" });
+}
+
+// function deleteMeal(req, res) {
+//   Meal.deleteOne(req.params.id)
+//   res.redirect('/meals')
+// }
+
+function deleteMeal(req, res) {
+  Meal.findOneAndDelete(
+    // Ensue that the book was created by the logged in user
+    {_id: req.params.id, user: req.user._id}, function(err) {
+      res.redirect('/meals');
+    }
+  );
 }
 
 function create(req, res) {

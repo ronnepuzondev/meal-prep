@@ -6,11 +6,11 @@
 <table id="list">
   <thead>
     <tr>
-      <th>Day</th>
-      <th>Breakfast</th>
-      <th>Lunch</th>
-      <th>Dinner</th>
-      <th>Snack</th>
+      <th scope="col">Day</th>
+      <th scope="col">Breakfast</th>
+      <th scope="col">Lunch</th>
+      <th scope="col">Dinner</th>
+      <th scope="col">Snack</th>
     </tr>
   </thead>
   <tbody>
@@ -22,13 +22,13 @@
       <td><%= f.dinner %></td>
       <td><%= f.snack %></td>
       <td><a href="/meals/<%= f._id %>">INGREDIENTS</a></td>
-      <form
+      <td><form
           action="/meals/<%= f.id %>?_method=DELETE"
           class="delete-form"
           method="POST"
         >
           <button type="submit">X</button>
-        </form>
+        </form></td>
     </tr>
     <% }); %>
   </tbody>

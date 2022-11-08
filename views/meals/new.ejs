@@ -1,0 +1,26 @@
+<body>
+<%- include('./partials/navbar') %>
+
+<h2>Enter a New Meal</h2>
+<form id="new-form" action="/meals" method="POST">
+  <label>Day:</label>
+  <select name="day">
+    <option value="Sun">Sun</option>
+    <option value="Mon">Mon</option>
+    <option value="Tues">Tues</option>
+    <option value="Wed">Wed</option>
+    <option value="Thurs">Thurs</option>
+    <option value="Fri">Fri</option>
+    <option value="Sat">Sat</option>
+  </select> 
+  <label>Breakfast:</label>
+  <input type="text" name="breakfast">
+  <label>Lunch:</label>
+  <input type="text" name="lunch">
+  <label>Dinner:</label>
+  <input type="text" name="dinner">
+  <label>Snack:</label>
+  <input type="text" name="snack">
+  <input type="submit" value="Add Daily Meal">
+</form>
+</body>

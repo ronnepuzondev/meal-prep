@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/navbar') %>
+
+
+<table id="list">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Breakfast</th>
+      <th>Lunch</th>
+      <th>Dinner</th>
+      <th>Snack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% meals.forEach(function(f) { %>
+    <tr>
+      <td><%= f.day%></td>
+      <td><%= f.breakfast %></td>
+      <td><%= f.lunch %></td>
+      <td><%= f.dinner %></td>
+      <td><%= f.snack %></td>
+      <td><a href="/meals/<%= f._id %>">INGREDIENTS</a></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+</body>

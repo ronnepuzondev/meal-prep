@@ -32,10 +32,15 @@ const mealSchema = new Schema(
         snack: {
             type: String
         },
-        ingredients: [ingredientsSchema]
+        ingredients: [ingredientsSchema],
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+
     }, {
         timestamps: true
     }
-)
+);
 
 module.exports = mongoose.model('Meal', mealSchema);

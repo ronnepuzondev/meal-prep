@@ -1,4 +1,5 @@
 var Meal = require("../models/meal");
+var User = require("../models/user")
 
 module.exports = {
   index,
@@ -25,10 +26,14 @@ function newMeal(req, res) {
 }
 
 function create(req, res) {
-  var meal = new Meal (req.body);
+  req.body.user = req.user._id;
+  console.log(req.body)
+  var meal = new Meal(req.body);
+ 
   meal.save(function (err) {
     if (err) return res.redirect(`/meals/new`);
     console.log(meal);
+    console.log(meal.user);
     res.redirect(`/meals`);
   });
 }

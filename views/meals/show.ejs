@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+<body>
+<%- include('../partials/navbar') %> 
+
+<section id="show-page">
+  <div>Day:</div>
+  <div><%= meal.day %></div>
+  <div>Breakfast:</div>
+  <div><%= meal.breakfast %></div>
+  <div>Lunch:</div>
+  <div><%= meal.lunch %></div>
+  <div>Dinner:</div>
+  <div><%= meal.dinner %></div>
+  <div>Snack:</div>
+  <div><%= meal.snack %></div>
+  <br /><br />
+ 
+  <h2>Ingredients For Grocery List</h2>
+  
+  <form
+    id="add-ingredients-form"
+    method="POST"
+    action="/meals/<%= meal._id %>/ingredients">
+  
+    <label>Add Here:</label>
+    <input type="string" name="ingredients"/>
+    <input type="submit" value="Add Ingredients"/>
+  </form>
+  
+  <% if (meal.ingredients.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Ingredients</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% meal.ingredients.forEach(function(i) { %>
+        <tr>
+          <td><%=i.ingredients%></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <h5>No Ingredients Yet</h5>
+    <% } %>
+
+
+</body>

@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 
 const ingredientsSchema = new Schema(
     {
-        ingredients: [],
+        ingredients: {
+            type: []
+        }
     }
 )
 

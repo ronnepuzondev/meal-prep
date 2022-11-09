@@ -13,13 +13,7 @@ const ingredientsSchema = new Schema(
 const mealSchema = new Schema(
     {
         dateOfMeal: {
-            type: Date
-        },
-        endDate: {
-            type: Date
-        },
-        day: {
-            type: String,
+            type: Date,
         },
         breakfast: {
             type: String

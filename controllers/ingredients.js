@@ -1,7 +1,8 @@
 var Meal = require('../models/meal');
 
+
 module.exports = {
-  create
+  create,
 };
 
 function create(req, res) {
@@ -12,3 +13,5 @@ function create(req, res) {
     });
   });
 }
+
+

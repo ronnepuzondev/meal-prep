@@ -76,3 +76,9 @@ function create(req, res) {
     res.redirect(`/meals`);
   });
 }
+
+// function listIngredients(req, res){
+//   Meal.find({user: req.user._id}, function(err, meal) {
+//     res.render("private", meal)
+//   })
+// }

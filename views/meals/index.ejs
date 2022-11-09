@@ -18,7 +18,7 @@
     <% meals.forEach(function(f) { %>
     <tr>
       
-      <td><%= f.dateOfMeal %></td>
+      <td><%= f.dateOfMeal.toDateString() %></td>
       <td><%= f.day %></td>
       <td><%= f.breakfast %></td>
       <td><%= f.lunch %></td>

@@ -22,6 +22,7 @@
       <td><%= f.dinner %></td>
       <td><%= f.snack %></td>
       <td><a href="/meals/<%= f._id %>">INGREDIENTS</a></td>
+      <td><a href='/meals/<%= f._id %>/edit'>EDIT MEAL</a></td>
       <td><form
           action="/meals/<%= f.id %>?_method=DELETE"
           class="delete-form"

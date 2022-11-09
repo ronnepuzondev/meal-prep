@@ -2,19 +2,6 @@
 <body>
 <%- include('../partials/navbar') %> 
 
-<section id="show-page">
-  <div>Day:</div>
-  <div><%= meal.day %></div>
-  <div>Breakfast:</div>
-  <div><%= meal.breakfast %></div>
-  <div>Lunch:</div>
-  <div><%= meal.lunch %></div>
-  <div>Dinner:</div>
-  <div><%= meal.dinner %></div>
-  <div>Snack:</div>
-  <div><%= meal.snack %></div>
-  <br /><br />
- 
   <h2>Ingredients For Grocery List</h2>
   
   <form
@@ -46,5 +33,24 @@
     <h5>No Ingredients Yet</h5>
     <% } %>
 
+    <table id="ingredientsTable">
+      <thead>
+        <tr>
+          <th scope="col">Day</th>
+          <th scope="col">Breakfast</th>
+          <th scope="col">Lunch</th>
+          <th scope="col">Dinner</th>
+          <th scope="col">Snack</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td><%= meal.day%></td>
+        <td><%= meal.breakfast %></td>
+        <td><%= meal.lunch %></td>
+        <td><%= meal.dinner %></td>
+        <td><%= meal.snack %></td>
+        <td><a href='/meals/<%= meal._id %>/edit'>EDIT MEAL</a></td>
+    </tbody>
 
 </body>

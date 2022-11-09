@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+<body>
+  <%- include('../partials/navbar') %>
+
+  <form
+    action="/meals/<%= meal.id %>?_method=PUT" method="POST" autocomplete="off"
+  >
+    <label>Day:</label>
+    <select name="day" value="meal.day">
+      <option value="Sun">Sun</option>
+      <option value="Mon">Mon</option>
+      <option value="Tues">Tues</option>
+      <option value="Wed">Wed</option>
+      <option value="Thurs">Thurs</option>
+      <option value="Fri">Fri</option>
+      <option value="Sat">Sat</option>
+    </select>
+    <label>Breakfast:</label>
+    <input type="text" name="breakfast" value="meal.breakfast" />
+    <label>Lunch:</label>
+    <input type="text" name="lunch" value="meal.lunch" />
+    <label>Dinner:</label>
+    <input type="text" name="dinner" value="meal.dinner" />
+    <label>Snack:</label>
+    <input type="text" name="snack" value="meal.snack" />
+    <input type="submit" value="Save Meal Updates" />
+  </form>
+</body>

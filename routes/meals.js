@@ -10,6 +10,6 @@ router.get('/:id/edit', mealsCtrl.edit);
 router.post('/', mealsCtrl.create);
 router.delete("/:id", mealsCtrl.delete);
 router.put('/:id', mealsCtrl.update);
-// router.get('/:id/grocerylist', mealsCtrl.listIngredients)
+
 
 module.exports = router;

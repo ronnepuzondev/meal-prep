@@ -6,7 +6,7 @@
     action="/meals/<%= meal.id %>?_method=PUT" method="POST" autocomplete="off"
   >
     <label>Day:</label>
-    <select name="day" value="meal.day">
+    <select name="day" value="<%- meal.day %>">
       <option value="Sun">Sun</option>
       <option value="Mon">Mon</option>
       <option value="Tues">Tues</option>
@@ -16,13 +16,13 @@
       <option value="Sat">Sat</option>
     </select>
     <label>Breakfast:</label>
-    <input type="text" name="breakfast" value="meal.breakfast" />
+    <input type="text" name="breakfast" value="<%- meal.breakfast %> "/>
     <label>Lunch:</label>
-    <input type="text" name="lunch" value="meal.lunch" />
+    <input type="text" name="lunch" value="<%- meal.lunch %>"/>
     <label>Dinner:</label>
-    <input type="text" name="dinner" value="meal.dinner" />
+    <input type="text" name="dinner" value="<%- meal.dinner %>" />
     <label>Snack:</label>
-    <input type="text" name="snack" value="meal.snack" />
+    <input type="text" name="snack" value="<%- meal.snack %>" />
     <input type="submit" value="Save Meal Updates" />
   </form>
 </body>

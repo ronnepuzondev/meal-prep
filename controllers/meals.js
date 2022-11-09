@@ -1,6 +1,7 @@
 var Meal = require("../models/meal");
 var User = require("../models/user");
 
+
 module.exports = {
   index,
   show,
@@ -12,7 +13,7 @@ module.exports = {
 };
 
 function index(req, res) {
-  Meal.find({}, function (err, meals) {
+  Meal.find({user: req.user._id}, function (err, meals) {
     res.render("meals/index", { title: "Calendar Week", meals });
   });
 }
@@ -68,7 +69,6 @@ function create(req, res) {
   req.body.user = req.user._id;
   console.log(req.body);
   var meal = new Meal(req.body);
- 
   meal.save(function (err) {
     if (err) return res.redirect(`/meals/new`);
     console.log(meal);

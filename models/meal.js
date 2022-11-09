@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+
 const ingredientsSchema = new Schema(
     {
         ingredients: {
@@ -11,7 +12,7 @@ const ingredientsSchema = new Schema(
 
 const mealSchema = new Schema(
     {
-        startDate: {
+        dateOfMeal: {
             type: Date
         },
         endDate: {

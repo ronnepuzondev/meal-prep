@@ -42,5 +42,46 @@
 </div>
 </form>
 </div>
+<h1>Meals Entered So Far..</h1>
+<div class="container">
+  <table id="list">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Breakfast</th>
+        <th scope="col">Lunch</th>
+        <th scope="col">Dinner</th>
+        <th scope="col">Snack</th>
+        <th scope="col">Ingredients</th>
+        <th scope="col">Edit?</th>
+        <th scope="col">Delete?</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <% meals.forEach(function(f) { %>
+      <tr>
+        
+        <td><%= f.dateOfMeal.toDateString()%></td>
+        <td><%= f.breakfast %></td>
+        <td><%= f.lunch %></td>
+        <td><%= f.dinner %></td>
+        <td><%= f.snack %></td>
+        <td><a href="/meals/<%= f._id %>">INGREDIENTS</a></td>
+        <td><a href='/meals/<%= f._id %>/edit'>EDIT MEAL</a></td>
+        <td><form
+            action="/meals/<%= f.id %>?_method=DELETE"
+            class="delete-form"
+            method="POST"
+          >
+            <button type="submit">X</button>
+          </form></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+  
+  </div>
 
 </body>

@@ -16,12 +16,13 @@ function create(req, res) {
 }
 
 function deleteIngredient(req, res) {
-  Meal.findById(req.params.id, function(err, meal) {
-    Meal.ingredients.findOneAndDelete(
-      // Ensue that the book was created by the logged in user
-      {_id: req.params.id, user: req.user._id}, function(err) {
-        res.redirect('/meals/${meal._id}');
-      })
+  Meal.findOne({'ingredients._id': req.params.id},
+  function(err, meal) {
+    if (!meal || err) return res.redirect('/meals/&{meal._id}')
+    meal.ingredients.remove(req.params.id);
+    meal.save(function(err) {
+      res.redirect(`/meals/${meal._id}`)
+    })
   })
-  
 }
+  

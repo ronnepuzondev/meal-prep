@@ -18,7 +18,7 @@ function create(req, res) {
 function deleteIngredient(req, res) {
   Meal.findOne({'ingredients._id': req.params.id},
   function(err, meal) {
-    if (!meal || err) return res.redirect('/meals/&{meal._id}')
+    // if (!meal || err) return res.redirect('/meals/&{meal._id}')
     meal.ingredients.remove(req.params.id);
     meal.save(function(err) {
       res.redirect(`/meals/${meal._id}`)

@@ -22,7 +22,7 @@
     <% meals.forEach(function(f) { %>
     <tr>
       
-      <td><%= f.dateOfMeal.toDateString()%></td>
+      <td><b><%= f.dateOfMeal.toDateString()%></b></td>
       <td><%= f.breakfast %></td>
       <td><%= f.lunch %></td>
       <td><%= f.dinner %></td>
@@ -48,6 +48,7 @@
 
 
 <h1>Grocery List</h1>
+<h5><i>(list autopopulates from meal ingredients)</i></h5>
 
   <div class="container">
     <table id="table">

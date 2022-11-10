@@ -1,5 +1,5 @@
 var Meal = require("../models/meal");
-var User = require("../models/user");
+// var User = require("../models/user");
 
 
 module.exports = {
@@ -74,9 +74,3 @@ function create(req, res) {
     res.redirect(`/meals`);
   });
 }
-
-// function listIngredients(req, res){
-//   Meal.find({user: req.user._id}, function(err, meal) {
-//     res.render("private", meal)
-//   })
-// }

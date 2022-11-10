@@ -1,8 +1,35 @@
 <%- include('../partials/header') %>
 <body>
   <%- include('../partials/navbar') %>
+  <form id="new-form" action="/meals/<%= meal.id %>?_method=PUT"
+    method="POST"
+    autocomplete="off">
+    <div class="mb-3">
+      <label>Date:</label>
+      <input type="datetime-local" name="dateOfMeal" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Breakfast:</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.breakfast %>" name="breakfast">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Lunch:</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.lunch %>" name="lunch">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Dinner:</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.dinner %>" name="dinner">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Snack:</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.snack %>" name="snack">
+    </div>
+    <div class="mb-3">
+      <input type="submit" value="Save Meal Updates">
+    </div>
+    </form>
 
-  <form
+  <!-- <form
     action="/meals/<%= meal.id %>?_method=PUT"
     method="POST"
     autocomplete="off"
@@ -21,6 +48,6 @@
     <label>Snack:</label>
     <input type="text" name="snack" value="<%- meal.snack %>" />
     <input type="submit" value="Save Meal Updates" />
-  </form>
+  </form> -->
   <a class="nav-link" href="/meals">Go back to Meal Calendar</a>
 </body>

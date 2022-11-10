@@ -40,8 +40,6 @@
 </table>
 <a class="nav-link" href="/meals/new">Add A Meal</a>
 
-
-
   <table class="table">
     <thead>
       <tr>
@@ -51,13 +49,17 @@
       <tbody>
         <% meals.forEach(function(f) { %>
         <tr>
-          <th scope="row"><%= f.ingredients%></th>
+          <th><%= f.ingredients.toString() %></th>
           <td></td>
         </tr>
         <% }); %>
       </tbody>
-     
-    
   </table>
 
+  <ul>
+    <% meals.forEach(function(f) { %>
+      <li><%= f.ingredients.toString() %></li>
+      <% }); %>
+  </ul>
+  
 </body>

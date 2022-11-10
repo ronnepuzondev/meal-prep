@@ -13,7 +13,7 @@ tr:nth-child(even) {
 }
 
 th[scope="col"] {
-    background-color: #696969;
+    background-color: grey;
     color: #fff;
 }
 
@@ -29,10 +29,6 @@ table {
     font-size: 1rem;
 }
 
-body {
-    background-color: white;
-
-}
 
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -42,9 +38,12 @@ h1 {
 
 .newMeal {
     display: inline;
-    margin: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
+
+
 .container {
-    /* border: 2px solid rgb(200, 200, 200); */
+    display: flexbox;
 }

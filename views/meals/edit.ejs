@@ -1,6 +1,8 @@
 <%- include('../partials/header') %>
 <body>
   <%- include('../partials/navbar') %>
+  <h1>Edit Meal</h1>
+  <div class="container">
   <form id="new-form" action="/meals/<%= meal.id %>?_method=PUT"
     method="POST"
     autocomplete="off">
@@ -50,4 +52,5 @@
     <input type="submit" value="Save Meal Updates" />
   </form> -->
   <a class="nav-link" href="/meals">Go back to Meal Calendar</a>
+</div>
 </body>

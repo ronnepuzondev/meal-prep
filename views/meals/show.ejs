@@ -10,7 +10,7 @@
     action="/meals/<%= meal._id %>/ingredients">
   
     <label>Add Here:</label>
-    <input type="string" name="ingredients"/>
+    <input type="text" name="name" autocomplete="off"/>
     <input type="submit" value="Add Ingredients"/>
   </form>
   
@@ -24,7 +24,14 @@
       <tbody>
         <% meal.ingredients.forEach(function(i) { %>
         <tr>
-          <td><%=i.ingredients%></td>
+          <td><%=i.name%></td>
+          <td><form
+            action="/meals/<%= i.id %>/ingredients?_method=DELETE"
+            class="delete-form"
+            method="POST"
+          >
+            <button type="submit">X</button>
+          </form></td>
         </tr>
         <% }); %>
       </tbody>

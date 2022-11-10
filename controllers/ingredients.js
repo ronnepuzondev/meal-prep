@@ -3,6 +3,7 @@ var Meal = require('../models/meal');
 
 module.exports = {
   create,
+  delete: deleteIngredient,
 };
 
 function create(req, res) {
@@ -14,4 +15,13 @@ function create(req, res) {
   });
 }
 
-
+function deleteIngredient(req, res) {
+  Meal.findById(req.params.id, function(err, meal) {
+    Meal.ingredients.findOneAndDelete(
+      // Ensue that the book was created by the logged in user
+      {_id: req.params.id, user: req.user._id}, function(err) {
+        res.redirect('/meals/${meal._id}');
+      })
+  })
+  
+}

@@ -46,31 +46,31 @@
 <button class="newMeal" onclick="location.href='/meals/new'" type="button">
   Add A New Meal</button>
 
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Ingredients</th>
-      </tr>
-    </thead>
-      <tbody>
-        <% meals.forEach(function(f) { %>
-        <tr>
-          <th><%= f.ingredients.toString() %></th>
-          <td></td>
-        </tr>
-        <% }); %>
-      </tbody>
-  </table>
-
-
-  <ul class="list-group list-group-flush">
-    <% meals.forEach(function(f) { %>
-    <li class="list-group-item"><%= f.ingredients.toString() %></li>
-  </ul>
-  <% }); %>
-
-
 </div>
+
+
+
+
+  <div class="container">
+    <table id="table">
+      <thead>
+        <tr>
+          <th scope="col">Ingredients Grocery List:</th>
+        </tr>
+      </thead>
+        <tbody>
+          <% meals.forEach(function(meal) { %>
+          <tr>
+            <% meal.ingredients.forEach(ingredient => { %>
+             <td><%= ingredient.name %> </td>
+            <% }) %>
+          </tr>
+          <% }); %>
+        </tbody>
+    </table>
+
+
+
+
   
 </body>

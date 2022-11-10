@@ -43,6 +43,7 @@ function deleteMeal(req, res) {
   );
 }
 
+
 function edit(req, res) {
   Meal.findOne({_id: req.params.id, user: req.user._id}, function(err, meal) {
     if (err || !meal) return res.redirect('/meals');

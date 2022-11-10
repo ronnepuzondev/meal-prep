@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 <body>
 <%- include('../partials/navbar') %>
-
-<h2>Enter a New Meal</h2>
+<div class="container">
+<h1>Enter a New Meal</h1>
 <!-- <form id="new-form" action="/meals" method="POST">
   <label>Date:</label>
   <input type="datetime-local" name="dateOfMeal" required>
@@ -18,28 +18,29 @@
 </form> -->
 <form id="new-form" action="/meals" method="POST">
 <div class="mb-3">
-  <label>Date:</label>
+  <label><b>Date:</b></label>
   <input type="datetime-local" name="dateOfMeal" required>
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Breakfast:</label>
+  <label for="exampleFormControlInput1" class="form-label"><b>Breakfast:</b></label>
   <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Eggs, Bacon, Toast" name="breakfast">
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Lunch:</label>
+  <label for="exampleFormControlInput1" class="form-label"><b>Lunch:</b></label>
   <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Fried Chicken and Vegetables" name="lunch">
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Dinner:</label>
+  <label for="exampleFormControlInput1" class="form-label"><b>Dinner:</b></label>
   <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Baked Salmon and Brown Rice" name="dinner">
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Snack:</label>
+  <label for="exampleFormControlInput1" class="form-label"><b>Snack:</b></label>
   <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Low Carb Ice Cream" name="snack">
 </div>
 <div class="mb-3">
   <input type="submit" value="Add Daily Meal">
 </div>
 </form>
+</div>
 
 </body>

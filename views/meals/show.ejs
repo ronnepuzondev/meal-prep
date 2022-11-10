@@ -15,10 +15,10 @@
   </form>
   
   <% if (meal.ingredients.length) { %>
-    <table>
+    <table id="ingredientsTable">
       <thead>
         <tr>
-          <th>Ingredients</th>
+          <th scope="col">Ingredients</th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +33,7 @@
     <h5>No Ingredients Yet</h5>
     <% } %>
 
-    <table id="ingredientsTable">
+    <table id="mealCalendar">
       <thead>
         <tr>
           <th scope="col">Date</th>

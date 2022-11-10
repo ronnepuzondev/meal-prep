@@ -1,7 +1,9 @@
 <%- include('../partials/header') %>
 <body>
     <%- include('../partials/navbar') %>
-    
+<h1>Meal Calendar</h1>
+
+    <div class="container">
 <table id="list">
   <thead>
     <tr>
@@ -38,8 +40,13 @@
     <% }); %>
   </tbody>
 </table>
-<a class="nav-link" href="/meals/new">Add A Meal</a>
+<!-- <a class="nav-link" href="/meals/new">Add A Meal</a>
+<a href="/meals/new" class="button" type="button">Add A New Meal</a>
+</div> -->
+<button class="newMeal" onclick="location.href='/meals/new'" type="button">
+  Add A New Meal</button>
 
+<div class="container">
   <table class="table">
     <thead>
       <tr>
@@ -56,10 +63,14 @@
       </tbody>
   </table>
 
-  <ul>
+
+  <ul class="list-group list-group-flush">
     <% meals.forEach(function(f) { %>
-      <li><%= f.ingredients.toString() %></li>
-      <% }); %>
+    <li class="list-group-item"><%= f.ingredients.toString() %></li>
   </ul>
+  <% }); %>
+
+
+</div>
   
 </body>

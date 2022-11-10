@@ -26,6 +26,25 @@ table {
     border: 2px solid rgb(200, 200, 200);
     letter-spacing: 1px;
     font-family: sans-serif;
-    font-size: .8rem;
-    ali
+    font-size: 1rem;
+}
+
+body {
+    background-color: white;
+
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.newMeal {
+    display: inline;
+    margin: 5px;
+}
+
+.container {
+    /* border: 2px solid rgb(200, 200, 200); */
 }

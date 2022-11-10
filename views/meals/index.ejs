@@ -40,4 +40,24 @@
 </table>
 <a class="nav-link" href="/meals/new">Add A Meal</a>
 
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ingredients</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% meals.forEach(function(f) { %>
+        <tr>
+          <th scope="row"><%= f.ingredients%></th>
+          <td></td>
+        </tr>
+        <% }); %>
+      </tbody>
+     
+    
+  </table>
+
 </body>

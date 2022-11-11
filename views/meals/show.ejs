@@ -2,23 +2,33 @@
 <body>
 <%- include('../partials/navbar') %> 
 
-  <h2>Add Ingredients for Meal below</h2>
+<div class="container">
+
   
   <form
     id="add-ingredients-form"
     method="POST"
     action="/meals/<%= meal._id %>/ingredients">
   
-    <label>Add Here:</label>
-    <input type="text" name="name" autocomplete="off"/>
-    <input type="submit" value="Add Ingredients"/>
+    <div class="mb-3">
+      
+      <label for="exampleFormControlInput1" class="form-label"><b>Add Ingredients Here:</b></label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name="name" required autocomplete="off">
+      <input class="addIngredientsButton" type="submit" value="Add Ingredients"/>
+      <a class="nav-link" href="/meals">Go back to Meal Calendar</a>
+    </div>
+
+
+   
   </form>
   
+<!-- Ingredient list code for user reference code is below-->
+
   <% if (meal.ingredients.length) { %>
     <table id="ingredientsTable">
       <thead>
         <tr>
-          <th scope="col">Ingredients</th>
+          <th scope="col">Ingredients added so far..</th>
           <th scope="col">Delete?</th>
         </tr>
       </thead>
@@ -38,8 +48,10 @@
       </tbody>
     </table>
     <% } else { %>
-    <h5>No Ingredients Yet</h5>
+<h5>No Ingredients Yet</h5>    
     <% } %>
+
+    <!-- Display Daily Meal for reference to user code is below -->
 
     <table id="mealCalendar">
       <thead>
@@ -62,6 +74,9 @@
         <td><a href='/meals/<%= meal._id %>/edit'>EDIT MEAL</a></td>
     </tbody>
 
-    <a class="nav-link" href="/meals">Go back to Meal Calendar</a>
+    
+<h1>Add Ingredients for these meals..</h1>
+
+  </div>
 
 </body>

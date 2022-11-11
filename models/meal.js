@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 const ingredientsSchema = new Schema(
     {
-            name: String
+            name: String,
+            inCart: {
+                type: Boolean, default: false,
+            }
     }
 )
 

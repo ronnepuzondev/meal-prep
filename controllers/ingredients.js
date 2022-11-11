@@ -4,6 +4,8 @@ var Meal = require('../models/meal');
 module.exports = {
   create,
   delete: deleteIngredient,
+  edit,
+  update
 };
 
 function create(req, res) {
@@ -25,4 +27,22 @@ function deleteIngredient(req, res) {
     })
   })
 }
+
+function edit(req, res) {
+  Meal.findOne({'ingredients._id': req.params.id},
+  function(err, meal) {
+    const ingredient = meal.ingredients.id(req.params.id)
+  });
+}
+
+function update(req, res) {
+  Meal.findOne({'ingredients._id': req.params.id}, function(err, meal) {
+    const ingredientSubdoc = meal.ingredients.id(req.params.id);
+    ingredientSubdoc.checkbox = req.body.checkbox;
+    meal.save(function(err) {
+      res.redirect(`/meals`)
+    })
+  })
+}
+
   

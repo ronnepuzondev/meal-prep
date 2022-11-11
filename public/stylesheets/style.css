@@ -22,7 +22,7 @@ th[scope="row"] {
 }
 
 table {
-    border-collapse: collapse;
+    border-collapse: separate;
     border: 2px solid rgb(200, 200, 200);
     letter-spacing: 1px;
     font-family: sans-serif;
@@ -50,4 +50,23 @@ h5 {
 
 .container {
     display: flexbox;
+}
+
+.welcome {
+    padding-top: 100px;
+    color: red;
+}
+
+#add-ingredients-form {
+    margin-top: 50px;
+}
+
+.addIngredientsButton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.saveCheckmarksButton {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

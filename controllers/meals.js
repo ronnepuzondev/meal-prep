@@ -71,6 +71,6 @@ function create(req, res) {
     if (err) return res.redirect(`/meals/new`);
     console.log(meal);
     console.log(meal.user);
-    res.redirect(`/meals`);
+    res.redirect(`/meals/${meal._id}`);
   });
 }

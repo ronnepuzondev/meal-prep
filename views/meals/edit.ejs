@@ -1,7 +1,12 @@
 <%- include('../partials/header') %>
+
 <body>
+
   <%- include('../partials/navbar') %>
-  <h1>Edit Meal</h1>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h1>Edit Meal</h1>
   <div class="container">
   <form id="new-form" action="/meals/<%= meal.id %>?_method=PUT"
     method="POST"
@@ -27,10 +32,17 @@
       <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.snack %>" name="snack">
     </div>
     <div class="mb-3">
-      <input type="submit" value="Save Meal Updates">
+      <input type="submit" class="btn btn-dark" value="Save Meal Updates">
     </div>
     </form>
 
-  <a class="nav-link" href="/meals">Go back to Meal Calendar</a>
+  <a class="btn btn-dark" href="/meals">Go back to Meal Calendar</a>
 </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  
 </body>

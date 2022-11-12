@@ -2,9 +2,43 @@
 <body>
 <%- include('../partials/navbar') %>
 <div class="container">
-<h1>Enter a new meal..</h1>
 
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h1>Enter a new meal..</h1>
 <form id="new-form" action="/meals" method="POST">
+  <div class="mt-4 form-mb-3" >
+    <label for="date" class="form-label">Date:</label>
+    <input type="datetime-local" name="dateOfMeal" required>
+  </div>
+  <div class="mt-4 form-floating">
+    <input type="text" class="form-control" id="breakfast" placeholder="Ex. Eggs, Bacon, Toast" name="breakfast" autocomplete="off">
+    <label for="breakfast" class="form-label"><b>Breakfast:</b></label>
+  </div>
+  <div class="mt-4 form-floating">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Fried Chicken and Vegetables" name="lunch" autocomplete="off">
+    <label for="exampleFormControlInput1" class="form-label"><b>Lunch:</b></label>
+  </div>
+  <div class="mt-4 form-floating">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Baked Salmon and Brown Rice" name="dinner" autocomplete="off">
+    <label for="exampleFormControlInput1" class="form-label"><b>Dinner:</b></label>
+  </div>
+  <div class="mt-4 form-floating">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Low Carb Ice Cream" name="snack" autocomplete="off">
+    <label for="exampleFormControlInput1" class="form-label"><b>Snack:</b></label>
+  </div>
+  <div class="mt-4 mb-3">
+    <input class="btn btn-dark" type="submit" value="Add Daily Meal">
+  </div>
+  </form>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- <form id="new-form" action="/meals" method="POST">
 <div class="mb-3">
   <label><b>Date:</b></label>
   <input type="datetime-local" name="dateOfMeal" required>
@@ -29,28 +63,28 @@
   <input type="submit" value="Add Daily Meal">
 </div>
 </form>
-</div>
+</div> -->
 <h1>Meals entered so far..</h1>
 <div class="container">
-  <table id="list">
-    <thead>
+  <table class = "table table-striped table-hover table-bordered">
+    <thead class="table-group-divider">
       <tr>
-        <th scope="col">Date</th>
-        <th scope="col">Breakfast</th>
-        <th scope="col">Lunch</th>
-        <th scope="col">Dinner</th>
-        <th scope="col">Snack</th>
-        <th scope="col">Ingredients</th>
-        <th scope="col">Edit?</th>
-        <th scope="col">Delete?</th>
+        <th class ="table-border">Date</th>
+        <th class ="table-border">Breakfast</th>
+        <th class ="table-border">Lunch</th>
+        <th class ="table-border">Dinner</th>
+        <th class ="table-border">Snack</th>
+        <th class ="table-border">Ingredients</th>
+        <th class ="table-border">Edit?</th>
+        <th class ="table-border">Delete?</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
   
       <% meals.forEach(function(f) { %>
       <tr>
         
-        <td><%= f.dateOfMeal.toDateString()%></td>
+        <td><b><%= f.dateOfMeal.toDateString()%></b></td>
         <td><%= f.breakfast %></td>
         <td><%= f.lunch %></td>
         <td><%= f.dinner %></td>
@@ -68,6 +102,7 @@
       <% }); %>
     </tbody>
   </table>
+  
   
   
   </div>

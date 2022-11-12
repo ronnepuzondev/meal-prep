@@ -2,81 +2,87 @@
 <body>
 <%- include('../partials/navbar') %> 
 
-<div class="container">
-
-  
-  <form
-    id="add-ingredients-form"
-    method="POST"
-    action="/meals/<%= meal._id %>/ingredients">
-  
-    <div class="mb-3">
-      
-      <label for="exampleFormControlInput1" class="form-label"><b>Add Ingredients Here:</b></label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" name="name" required autocomplete="off">
-      <input class="addIngredientsButton" type="submit" value="Add Ingredients"/>
-      <a class="nav-link" href="/meals">Go back to Meal Calendar</a>
-    </div>
-
-
-   
-  </form>
-  
-<!-- Ingredient list code for user reference code is below-->
-
-  <% if (meal.ingredients.length) { %>
-    <table id="ingredientsTable">
-      <thead>
-        <tr>
-          <th scope="col">Ingredients added so far..</th>
-          <th scope="col">Delete?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% meal.ingredients.forEach(function(i) { %>
-        <tr>
-          <td><%=i.name%></td>
-          <td><form
-            action="/meals/<%= i.id %>/ingredients?_method=DELETE"
-            class="delete-form"
-            method="POST"
-          >
-            <button type="submit">X</button>
-          </form></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-    <% } else { %>
-<h5>No Ingredients Yet</h5>    
-    <% } %>
 
     <!-- Display Daily Meal for reference to user code is below -->
 
-    <table id="mealCalendar">
-      <thead>
-        <tr>
-          <th scope="col">Date</th>
-          <th scope="col">Breakfast</th>
-          <th scope="col">Lunch</th>
-          <th scope="col">Dinner</th>
-          <th scope="col">Snack</th>
-          <th scope="col">Edit Meal?</th>
-        </tr>
-      </thead>
-    <tbody>
-      <tr>
-        <td><%= meal.dateOfMeal.toDateString() %></td>
-        <td><%= meal.breakfast %></td>
-        <td><%= meal.lunch %></td>
-        <td><%= meal.dinner %></td>
-        <td><%= meal.snack %></td>
-        <td><a href='/meals/<%= meal._id %>/edit'>EDIT MEAL</a></td>
-    </tbody>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <table id="mealCalendar">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Breakfast</th>
+                <th scope="col">Lunch</th>
+                <th scope="col">Dinner</th>
+                <th scope="col">Snack</th>
+                <th scope="col">Edit Meal?</th>
+              </tr>
+            </thead>
+          <tbody>
+            <tr>
+              <td><%= meal.dateOfMeal.toDateString() %></td>
+              <td><%= meal.breakfast %></td>
+              <td><%= meal.lunch %></td>
+              <td><%= meal.dinner %></td>
+              <td><%= meal.snack %></td>
+              <td><a href='/meals/<%= meal._id %>/edit'>EDIT MEAL</a></td>
+          </tbody>
+          </table>
+      
+        </div>
+      </div>
+    </div>
 
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h3></h3>
+      <form
+        id="add-ingredients-form"
+        method="POST"
+        action="/meals/<%= meal._id %>/ingredients">
+        <div class="form-floating">
+          <input type="text" class="mb-4 form-control" id="exampleFormControlInput1" name="name" placeholder="asdf" required autocomplete="off">
+          <label for="exampleFormControlInput1" class="form-label"><b>Add ingredients for meals above here</b></label>
+        </div>
+
+          <input class="btn btn-dark" type="submit" value="Add Ingredients"/>
+          <a class="btn btn-dark" href="/meals">Go back to Meal Calendar</a>
+        
+       
+      </form>
     
-<h1>Add Ingredients for these meals..</h1>
-
-  </div>
+    <!-- Ingredient list code for user reference code is below-->
+    
+      <% if (meal.ingredients.length) { %>
+        <table id="ingredientsTable">
+          <thead>
+            <tr>
+              <th scope="col">Ingredients added so far..</th>
+              <th scope="col">Delete?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% meal.ingredients.forEach(function(i) { %>
+            <tr>
+              <td><%=i.name%></td>
+              <td><form
+                action="/meals/<%= i.id %>/ingredients?_method=DELETE"
+                class="delete-form"
+                method="POST"
+              >
+                <button type="submit">X</button>
+              </form></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+        <% } else { %>
+    <h5>No Ingredients Yet</h5>    
+        <% } %>
+      </div>
+    </div>
+    </div>
 
 </body>

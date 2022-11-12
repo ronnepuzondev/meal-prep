@@ -8,8 +8,9 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <table id="mealCalendar">
-            <thead>
+          <h2 class="card-title" style="color:red">Ingredients needed for meals below</h2>
+          <table class="table table-striped table-hover table-bordered">
+            <thead class="table-group-divider">
               <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Breakfast</th>
@@ -19,7 +20,7 @@
                 <th scope="col">Edit Meal?</th>
               </tr>
             </thead>
-          <tbody>
+          <tbody class="table-group-divider">
             <tr>
               <td><%= meal.dateOfMeal.toDateString() %></td>
               <td><%= meal.breakfast %></td>
@@ -44,7 +45,7 @@
         action="/meals/<%= meal._id %>/ingredients">
         <div class="form-floating">
           <input type="text" class="mb-4 form-control" id="exampleFormControlInput1" name="name" placeholder="asdf" required autocomplete="off">
-          <label for="exampleFormControlInput1" class="form-label"><b>Add ingredients for meals above here</b></label>
+          <label for="exampleFormControlInput1" class="form-label">Add ingredients for meals above here!<label>
         </div>
 
           <input class="btn btn-dark" type="submit" value="Add Ingredients"/>
@@ -56,10 +57,10 @@
     <!-- Ingredient list code for user reference code is below-->
     
       <% if (meal.ingredients.length) { %>
-        <table id="ingredientsTable">
+        <table class="table table-striped table-hover table-bordered">
           <thead>
             <tr>
-              <th scope="col">Ingredients added so far..</th>
+              <th scope="col" style="color: red">Ingredients added so far..</th>
               <th scope="col">Delete?</th>
             </tr>
           </thead>

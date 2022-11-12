@@ -1,8 +1,9 @@
 <%- include('../partials/header') %>
 
 <body>
-
   <%- include('../partials/navbar') %>
+
+
   <div class="container">
     <div class="card">
       <div class="card-body">
@@ -15,23 +16,23 @@
       <label>Date:</label>
       <input type="datetime-local" name="dateOfMeal" required>
     </div>
-    <div class="mb-3">
+    <div class="mt-4 form-floating">
+      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.breakfast %>" name="breakfast" placeholder="breakfast">
       <label for="exampleFormControlInput1" class="form-label">Breakfast:</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.breakfast %>" name="breakfast">
     </div>
-    <div class="mb-3">
+    <div class="mt-4 form-floating">
+      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.lunch %>" name="lunch" placeholder="lunch">
       <label for="exampleFormControlInput1" class="form-label">Lunch:</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.lunch %>" name="lunch">
     </div>
-    <div class="mb-3">
+    <div class="mt-4 form-floating">
+      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.dinner %>" name="dinner" placeholder="dinner">
       <label for="exampleFormControlInput1" class="form-label">Dinner:</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.dinner %>" name="dinner">
     </div>
-    <div class="mb-3">
+    <div class="mt-4 form-floating">
+      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.snack %>" name="snack" placeholder="snack">
       <label for="exampleFormControlInput1" class="form-label">Snack:</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" value="<%- meal.snack %>" name="snack">
     </div>
-    <div class="mb-3">
+    <div class="mt-4 form-floating">
       <input type="submit" class="btn btn-dark" value="Save Meal Updates">
     </div>
     </form>

@@ -7,7 +7,7 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
-      <h1>Enter a new meal..</h1>
+      <h2 class="card-title" style="color:red">Enter new meals</h2>
 <form id="new-form" action="/meals" method="POST">
   <div class="mt-4 form-mb-3" >
     <label for="date" class="form-label">Date:</label>
@@ -15,22 +15,22 @@
   </div>
   <div class="mt-4 form-floating">
     <input type="text" class="form-control" id="breakfast" placeholder="Ex. Eggs, Bacon, Toast" name="breakfast" autocomplete="off">
-    <label for="breakfast" class="form-label"><b>Breakfast:</b></label>
+    <label for="breakfast" class="form-label">Breakfast:</label>
   </div>
   <div class="mt-4 form-floating">
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Fried Chicken and Vegetables" name="lunch" autocomplete="off">
-    <label for="exampleFormControlInput1" class="form-label"><b>Lunch:</b></label>
+    <label for="exampleFormControlInput1" class="form-label">Lunch:</label>
   </div>
   <div class="mt-4 form-floating">
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Baked Salmon and Brown Rice" name="dinner" autocomplete="off">
-    <label for="exampleFormControlInput1" class="form-label"><b>Dinner:</b></label>
+    <label for="exampleFormControlInput1" class="form-label">Dinner:</label>
   </div>
   <div class="mt-4 form-floating">
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ex. Low Carb Ice Cream" name="snack" autocomplete="off">
-    <label for="exampleFormControlInput1" class="form-label"><b>Snack:</b></label>
+    <label for="exampleFormControlInput1" class="form-label">Snack:</label>
   </div>
   <div class="mt-4 mb-3">
-    <input class="btn btn-dark" type="submit" value="Add Daily Meal">
+    <input class="btn btn-dark" type="submit" value="Add New Meals">
   </div>
   </form>
   </div>
@@ -64,47 +64,48 @@
 </div>
 </form>
 </div> -->
-<h1>Meals entered so far..</h1>
+
 <div class="container">
-  <table class = "table table-striped table-hover table-bordered">
-    <thead class="table-group-divider">
-      <tr>
-        <th class ="table-border">Date</th>
-        <th class ="table-border">Breakfast</th>
-        <th class ="table-border">Lunch</th>
-        <th class ="table-border">Dinner</th>
-        <th class ="table-border">Snack</th>
-        <th class ="table-border">Ingredients</th>
-        <th class ="table-border">Edit?</th>
-        <th class ="table-border">Delete?</th>
-      </tr>
-    </thead>
-    <tbody class="table-group-divider">
-  
-      <% meals.forEach(function(f) { %>
-      <tr>
-        
-        <td><b><%= f.dateOfMeal.toDateString()%></b></td>
-        <td><%= f.breakfast %></td>
-        <td><%= f.lunch %></td>
-        <td><%= f.dinner %></td>
-        <td><%= f.snack %></td>
-        <td><a href="/meals/<%= f._id %>">INGREDIENTS</a></td>
-        <td><a href='/meals/<%= f._id %>/edit'>EDIT MEAL</a></td>
-        <td><form
-            action="/meals/<%= f.id %>?_method=DELETE"
-            class="delete-form"
-            method="POST"
-          >
-            <button type="submit">X</button>
-          </form></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  
-  
-  
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title" style="color:red">Meals entered so far</h2>
+      <table class = "table table-striped table-hover table-bordered">
+        <thead class="table-group-divider">
+          <tr>
+            <th class ="table-border">Date</th>
+            <th class ="table-border">Breakfast</th>
+            <th class ="table-border">Lunch</th>
+            <th class ="table-border">Dinner</th>
+            <th class ="table-border">Snack</th>
+            <th class ="table-border">Ingredients</th>
+            <th class ="table-border">Edit?</th>
+            <th class ="table-border">Delete?</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+      
+          <% meals.forEach(function(f) { %>
+          <tr>
+            <td><b><%= f.dateOfMeal.toDateString()%></b></td>
+            <td><%= f.breakfast %></td>
+            <td><%= f.lunch %></td>
+            <td><%= f.dinner %></td>
+            <td><%= f.snack %></td>
+            <td><a href="/meals/<%= f._id %>">INGREDIENTS</a></td>
+            <td><a href='/meals/<%= f._id %>/edit'>EDIT MEAL</a></td>
+            <td><form
+                action="/meals/<%= f.id %>?_method=DELETE"
+                class="delete-form"
+                method="POST">
+                <button type="submit">X</button>
+              </form></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
   </div>
 
 </body>

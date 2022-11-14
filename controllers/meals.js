@@ -1,5 +1,6 @@
 var Meal = require("../models/meal");
 
+
 module.exports = {
   index,
   show,

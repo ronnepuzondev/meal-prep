@@ -15,7 +15,7 @@ module.exports = {
 
 function index(req, res) {
   Meal.find({user: req.user._id}, function (err, meals) {
-    res.render("meals/index", { title: "Calendar Week", meals });
+    res.render("meals/index", { title: "Meal Calendar", meals });
   });
 }
 
@@ -28,7 +28,7 @@ function show(req, res) {
 
 function newMeal(req, res) {
   Meal.find({user: req.user._id}, function (err, meals) {
-  res.render("meals/new", { title: "Add Day and Meal", meals });
+  res.render("meals/new", { title: "Add Meals", meals });
 });
 }
 

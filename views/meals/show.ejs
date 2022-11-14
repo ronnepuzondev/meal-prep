@@ -38,15 +38,20 @@
   <div class="container">
     <div class="card">
       <div class="card-body">
-        <h3></h3>
+
+<!-- Add ingredient form, submit button and back to meal calendar code below-->
+
       <form
         id="add-ingredients-form"
         method="POST"
         action="/meals/<%= meal._id %>/ingredients">
         <div class="form-floating">
           <input type="text" class="mb-4 form-control" id="exampleFormControlInput1" name="name" placeholder="asdf" required autocomplete="off">
+
           <label for="exampleFormControlInput1" class="form-label">Add ingredients for meals above here!<label>
+  
         </div>
+     
 
           <input class="btn btn-dark" type="submit" value="Add Ingredients"/>
           <a class="btn btn-dark" href="/meals">Go back to Meal Calendar</a>

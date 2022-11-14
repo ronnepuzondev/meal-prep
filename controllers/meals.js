@@ -9,8 +9,9 @@ module.exports = {
   create,
   delete: deleteMeal,
   edit,
-  update
+  update,
 };
+
 
 function index(req, res) {
   Meal.find({user: req.user._id}, function (err, meals) {
@@ -74,3 +75,4 @@ function create(req, res) {
     res.redirect(`/meals/${meal._id}`);
   });
 }
+

@@ -1,6 +1,4 @@
 var Meal = require("../models/meal");
-// var User = require("../models/user");
-
 
 module.exports = {
   index,

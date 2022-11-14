@@ -1,6 +1,6 @@
  # **Meal Prepper**
  
- ### ***Meal Prepper will allow you to plan and track your weekly meals and manage a grocery list***
+ ### ***Create a meal calendar and automatically aggregate all of your meal ingredients into a grocery list! Print it out or use it on your mobile phone. Use your meal calendar as your guide for the week!***
 &nbsp;
 ## **Wireframes:**
 
@@ -9,6 +9,16 @@
 <img src="images/3.jpg" alt="drawing" width="500"/>
 <img src="images/4.jpg" alt="drawing" width="500"/>
 &nbsp;
+
+## **Screenshots:**
+
+<img src="images/mealprepper1.jpg" alt="drawing" width="500"/>
+<img src="images/mealprepper2.jpg" alt="drawing" width="500"/>
+<img src="images/mealprepper3.jpg" alt="drawing" width="500"/>
+<img src="images/mealprepper4.jpg" alt="drawing" width="500"/>
+<img src="images/mealprepper5.jpg" alt="drawing" width="500"/>
+&nbsp;
+
 
 ## **ERD Diagram:**
 
@@ -28,14 +38,15 @@
 - Javascript
 - MongoDB
 - Express.JS
-- Mongoose.JS
+- Mongoose
+- Bootstrap
 
-&nbsp;
-Add link here
+
 &nbsp;
 ## **Next Steps:**
 &nbsp;
 Future Enhancements will include:<br>
 - Calorie Tracker
 - Macro Views (Protein, Fat, Carbs)
+- Add Random Recipe API in Add New Meals section
 

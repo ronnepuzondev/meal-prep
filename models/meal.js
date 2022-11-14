@@ -5,9 +5,8 @@ const Schema = mongoose.Schema;
 const ingredientsSchema = new Schema(
     {
             name: String,
-            inCart: {
-                type: Boolean, default: false,
-            }
+    }, {
+        timestamps: true
     }
 )
 
